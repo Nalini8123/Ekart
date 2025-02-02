@@ -1,18 +1,26 @@
 pipeline {
-    agent any  // Runs on any available Jenkins agent
+    agent any
+
+    tools {
+        jdk 'jdk'
+        maven 'maven'
+    }
 
     environment {
-        GITHUB_REPO = 'https://github.com/Nalini8123/Ekart.git'
-       
+        SCANNER_HOME = tool 'sonar-scanner'  // Ensure this matches Jenkins Global Tool Name
     }
 
     stages {
-        stage('Checkout') {
+        stage('Git checkout') {
             steps {
-                echo 'Cloning repository...'
-                git branch: 'main', url: "${GITHUB_REPO}"
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/jaiswaladi246/Ekart.git'
             }
         }
-    }
-}
+
+        stage('Git compile') {
+            steps {
+                sh "mvn clean compile"
+            }
+        }
+
 
