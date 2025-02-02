@@ -5,6 +5,7 @@ pipeline {
       //  jdk 'jdk 11'
         maven '3.9.9'
     }
+    
    /* environment {
         SCANNER_HOME = tool 'sonar-scanner'  // Ensure this matches Jenkins Global Tool Name
        JAVA_HOME = '/usr/lib/jvm/java-11-openjdk-amd64'  // Set JAVA_HOME
