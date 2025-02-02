@@ -16,7 +16,7 @@ pipeline {
     stages {
         stage('Git checkout') {
             steps {
-                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/jaiswaladi246/Ekart.git'
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/Nalini8123/Ekart.git'
             }
         }
 
