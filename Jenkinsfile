@@ -2,16 +2,16 @@ pipeline {
     agent any
 
     tools {
-        jdk 'jdk 11'
-        maven 'maven 3'
+      //  jdk 'jdk 11'
+        maven '3.9.9'
     }
 
-    environment {
+   /* environment {
         SCANNER_HOME = tool 'sonar-scanner'  // Ensure this matches Jenkins Global Tool Name
-        JAVA_HOME = '/usr/lib/jvm/java-11-openjdk-amd64'  // Set JAVA_HOME
+       JAVA_HOME = '/usr/lib/jvm/java-11-openjdk-amd64'  // Set JAVA_HOME
         MAVEN_HOME = '/opt/maven'  // Set MAVEN_HOME
-        PATH = "$MAVEN_HOME/bin:$JAVA_HOME/bin:$PATH"  // Ensure Maven and Java are in the PATH
-    }
+        PATH = "$MAVEN_HOME/bin:$JAVA_HOME/bin:$PATH"  // Ensure Maven and Java are in the PATH 
+    } */
 
     stages {
         stage('Git checkout') {
