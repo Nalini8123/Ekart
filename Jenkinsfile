@@ -19,7 +19,7 @@ pipeline {
 
         stage('Git compile') {
             steps {
-                sh "mvn clean compile"
+               sh "mvn clean compile"
             }
         }
     }
